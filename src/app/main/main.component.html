@@ -1,0 +1,28 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+        </button>
+    </mat-drawer>
+    <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="space-between">
+        <div>
+            <mat-card>
+                <mat-card-content [innerHTML]="songLyrics"
+                    style="font-family: 'Courier New', Courier, monospace; font-size: 25px;">
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div>
+            <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Color selection">
+                <mat-chip-option *ngFor="let chip of selectedSongs" selected>
+                    {{chip}}
+                </mat-chip-option>
+            </mat-chip-listbox>
+        </div>
+    </div>
+</mat-drawer-container>
+<button type="button" mat-button (click)="drawer.toggle()">
+    Toggle sidenav
+</button>
