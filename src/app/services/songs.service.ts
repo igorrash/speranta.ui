@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class SongsService {
 
-  private lycricsBaseAddress = "http://localhost:5000";
+  private lycricsBaseAddress = "https://bsperantanodejs.azurewebsites.net/";
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
